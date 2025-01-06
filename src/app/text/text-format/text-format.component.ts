@@ -56,32 +56,32 @@ export class TextFormatComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.shortcuts.push(
       {
-        key: 'cmd + alt + u',
+        key: 'shift + ctrl + cmd + u',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.toUpperCase.bind(this),
       },
       {
-        key: 'cmd + alt + l',
+        key: 'shift + ctrl + cmd + l',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.toLowerCase.bind(this),
       },
       {
-        key: 'cmd + alt + i',
+        key: 'shift + ctrl + cmd + i',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.invertCase.bind(this),
       },
       {
-        key: 'cmd + alt + p',
+        key: 'shift + ctrl + cmd + p',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.pdfFormat.bind(this),
       },
       {
-        key: 'cmd + alt + e',
+        key: 'shift + ctrl + cmd  + f',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.jsonFormat.bind(this),
       },
       {
-        key: 'cmd + alt + s',
+        key: 'shift + ctrl + cmd + s',
         allowIn: [AllowIn.Textarea, AllowIn.Input],
         command: this.jsonSort.bind(this),
       }

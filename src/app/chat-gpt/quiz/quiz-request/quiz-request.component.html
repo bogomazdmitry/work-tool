@@ -6,38 +6,21 @@
   <div class="card-body d-flex flex-column gap-3 h-100">
     <chat-gpt-token-editor></chat-gpt-token-editor>
     <div class="btn-group" *ngIf="loaderHidden && quizHidden">
-      <button
-        class="btn"
-        mat-raised-button
-        color="primary"
-        matTooltip="CMD/Alt + Shift + C"
+      <button class="btn" mat-raised-button color="primary" matTooltip="shift + ctrl + cmd + C"
         (click)="generateQuiz()">
         Generate quiz
       </button>
-      <button
-        class="btn"
-        mat-raised-button
-        color="primary"
-        (click)="testQuiz()">
+      <button class="btn" mat-raised-button color="primary" (click)="testQuiz()">
         Test quiz
       </button>
     </div>
     <div class="h-100 d-flex flex-column" *ngIf="quizHidden">
-      <mat-form-field
-        appearance="fill"
-        class="fill-container no-padding"
-        *ngIf="loaderHidden">
-        <textarea
-          focusOnInit
-          matInput
-          [(ngModel)]="quizText"
-          placeholder="Enter text"
+      <mat-form-field appearance="fill" class="fill-container no-padding" *ngIf="loaderHidden">
+        <textarea focusOnInit matInput [(ngModel)]="quizText" placeholder="Enter text"
           [style.resize]="'none'"></textarea>
       </mat-form-field>
-      <div
-        class="h-100 mt-3 d-flex d-flex justify-content-center
-        align-items-center"
-        *ngIf="!loaderHidden">
+      <div class="h-100 mt-3 d-flex d-flex justify-content-center
+        align-items-center" *ngIf="!loaderHidden">
         <mat-spinner></mat-spinner>
       </div>
     </div>

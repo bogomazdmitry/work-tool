@@ -16,6 +16,7 @@ Create web applications on github pages for any text operations.
 
 - Check English text with chat-gpt
 - Quiz with chat-gpt with saving
+- CURL to python converter
 
 ## Features
 

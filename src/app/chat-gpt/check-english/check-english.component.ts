@@ -57,7 +57,7 @@ export class CheckEnglishComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.shortcuts.push({
-      key: 'cmd + alt + c',
+      key: 'shift + ctrl + cmd + c',
       allowIn: [AllowIn.Textarea, AllowIn.Input],
       command: this.checkEnglish.bind(this),
     });
