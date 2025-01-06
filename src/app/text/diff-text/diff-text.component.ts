@@ -104,12 +104,12 @@ export class DiffTextComponent implements OnInit, AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.shortcuts.push(
       {
-        key: 'cmd + alt + f',
+        key: 'shift + ctrl + cmd + f',
         allowIn: [AllowIn.Textarea, AllowIn.Input, AllowIn.ContentEditable],
         command: this.jsonFormat.bind(this),
       },
       {
-        key: 'cmd + alt + s',
+        key: 'shift + ctrl + cmd + s',
         allowIn: [AllowIn.Textarea, AllowIn.Input, AllowIn.ContentEditable],
         command: this.jsonSort.bind(this),
       }
