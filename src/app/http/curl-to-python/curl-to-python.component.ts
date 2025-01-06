@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ThemeService } from 'app/shared/services/theme.service';
 import { STORAGE_KEYS } from 'app/shared/static/local-storage-keys';
+import { AllowIn, ShortcutInput } from 'ng-keyboard-shortcuts';
 
 @Component({
   selector: 'app-curl-to-python',
   templateUrl: './curl-to-python.component.html',
   styleUrls: ['./curl-to-python.component.scss'],
 })
-export class CurlToPythonComponent {
+export class CurlToPythonComponent implements AfterViewInit {
   leftText = '';
   rightText = '';
 
@@ -41,6 +42,7 @@ export class CurlToPythonComponent {
     formatOnType: true,
     wordWrap: 'on',
   };
+  shortcuts: ShortcutInput[] = [];
 
   constructor(private themeService: ThemeService) {
     this.codeEditorOptionsInput.theme = this.themeService.getVsTheme();
@@ -62,6 +64,14 @@ export class CurlToPythonComponent {
         | number
         | null) || 50;
     this.rightWidth = 100 - this.leftWidth;
+  }
+
+  ngAfterViewInit(): void {
+    this.shortcuts.push({
+      key: 'shift + ctrl + cmd + c',
+      allowIn: [AllowIn.Textarea, AllowIn.Input, AllowIn.ContentEditable],
+      command: this.convertCurlToPython.bind(this),
+    });
   }
 
   convertCurlToPython() {
